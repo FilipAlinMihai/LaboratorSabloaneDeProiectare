@@ -1,55 +1,40 @@
 import java.util.ArrayList;
 
 public class Book {
-
-    private String nume;
-    private ArrayList<String> paragrafe;
-    private ArrayList<String> imagini;
-    private ArrayList<String> tabele;
-
-    public Book()
-    {
-
-    }
+    private String name;
+    private ArrayList<Author> authors;
+    private ArrayList<Chapter> chapters;
     public Book(String nume)
     {
-        this.nume=nume;
-        paragrafe=new ArrayList<String>();
-        imagini=new ArrayList<String>();
-        tabele=new ArrayList<String>();
+        this.name=nume;
+        chapters=new ArrayList<>();
+        authors=new ArrayList<>();
     }
-
-    public void createNewParagraph(String continut)
+    public void addAuthor(Author a)
     {
-        paragrafe.add(continut);
+        authors.add(a);
     }
-
-    public void createNewImage(String continut)
+    public int createChapter(String name)
     {
-        imagini.add(continut);
+        Chapter ch=new Chapter(name);
+        ch.setIndex(chapters.size()+1);
+        chapters.add(ch);
+        return chapters.size();
     }
-
-    public void createNewTable(String continut)
+    public Chapter getChapter(int i)
     {
-        tabele.add(continut);
+        for(Chapter c:chapters)
+            if(c.getIndex()==i)
+                return c;
+        return null;
     }
-
-
     public void print()
     {
-       for(String s : paragrafe)
-       {
-           System.out.println(s);
-       }
-        for(String s : imagini)
-        {
-            System.out.println(s);
-        }
-        for(String s : tabele)
-        {
-            System.out.println(s);
-        }
-
+        System.out.println("Book :"+name);
+        for(Author a:authors)
+            a.print();
+        for(Chapter ch:chapters)
+            ch.print();
     }
 
 }
