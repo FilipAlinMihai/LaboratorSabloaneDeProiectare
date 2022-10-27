@@ -4,6 +4,8 @@ public class Book {
     private String name;
     private ArrayList<Author> authors;
     private ArrayList<Chapter> chapters;
+
+    private TableOfContents tableOfContents;
     public Book(String nume)
     {
         this.name=nume;
