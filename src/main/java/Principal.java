@@ -10,7 +10,9 @@ public class Principal {
         Section cap1111 = new Section("Subchapter 1.1.1.1");
         noapteBuna.addContent(new Paragraph("Multumesc celor care ..."));
         noapteBuna.addContent(cap1);
+        noapteBuna.addContent(cap1);
         cap1.add(new Paragraph("Moto capitol"));
+        cap1.add(cap11);
         cap1.add(cap11);
         cap11.add(new Paragraph("Text from subchapter 1.1"));
 

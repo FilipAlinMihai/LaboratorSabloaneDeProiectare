@@ -20,7 +20,13 @@ public class Section implements Element{
     }
 
     public void add(Element e){
-        elements.add(e);
+
+        if(!elements.contains(e))
+            elements.add(e);
+        else
+        {
+            System.out.println("Elementul nu a fost adaugat! Nu sunt suportate duplicate!");
+        }
     }
     public void remove(Element e)
     {
