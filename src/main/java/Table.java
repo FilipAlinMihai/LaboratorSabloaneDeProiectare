@@ -9,4 +9,16 @@ public class Table implements  Element {
     {
         System.out.println("Table with Title: "+title);
     }
+
+    public void add(Element e){
+
+    }
+    public void remove(Element e)
+    {
+
+    }
+
+    public Element get(int x) {
+        return null;
+    }
 }

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class SubChapter {
+public class SubChapter  {
     private String name;
     private int index;
     private ArrayList<Element> elements;
