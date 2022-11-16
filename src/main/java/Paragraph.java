@@ -7,6 +7,8 @@ public class Paragraph implements Element{
     {
         text=t;
     }
+
+    private AlignStrategy strategy;
     public void print()
     {
         System.out.println("Paragraph: "+text);
@@ -23,4 +25,19 @@ public class Paragraph implements Element{
     public Element get(int x) {
         return null;
     }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setAlignStrategy(AlignStrategy a)
+    {
+        this.strategy=a;
+        a.render(this);
+    }
+
 }
