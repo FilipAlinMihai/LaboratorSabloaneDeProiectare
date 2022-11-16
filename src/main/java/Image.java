@@ -1,9 +1,17 @@
-public class Image implements Element {
+import java.awt.*;
+import java.util.concurrent.TimeUnit;
+
+public class Image implements Element,Picture {
 
     private String imageName;
 
     public Image(String name)
     {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         imageName=name;
     }
 
@@ -21,6 +29,21 @@ public class Image implements Element {
     }
 
     public Element get(int x) {
+        return null;
+    }
+
+    @Override
+    public String url() {
+        return null;
+    }
+
+    @Override
+    public Dimension dim() {
+        return null;
+    }
+
+    @Override
+    public String content() {
         return null;
     }
 }
