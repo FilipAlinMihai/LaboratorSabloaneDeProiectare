@@ -1,0 +1,71 @@
+package models;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.awt.*;
+import java.util.concurrent.TimeUnit;
+
+public class Image implements Element,Picture {
+
+    private String imageName;
+
+    public Image(String name)
+    {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        imageName=name;
+    }
+
+    public void print()
+    {
+        System.out.println("Image with name: "+imageName);
+    }
+
+    public void add(Element e){
+
+    }
+    public void remove(Element e)
+    {
+
+    }
+
+    public Element get(int x) {
+        return null;
+    }
+
+    @Override
+    public void accept(Visitor v) throws JSONException {
+            v.visitImage(this);
+    }
+
+    @Override
+    public JSONObject toJson() throws JSONException {
+
+        JSONObject img=new JSONObject();
+
+
+        img.put("tip","Imagine");
+        img.put("numeImagine",imageName);
+
+        return img;
+    }
+
+    @Override
+    public String url() {
+        return null;
+    }
+
+    @Override
+    public Dimension dim() {
+        return null;
+    }
+
+    @Override
+    public String content() {
+        return null;
+    }
+}
