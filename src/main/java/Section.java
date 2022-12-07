@@ -37,4 +37,11 @@ public class Section implements Element{
         return elements.get(x);
     }
 
+    @Override
+    public void accept(Visitor v) {
+        v.visitSection(this);
+        for(Element e:elements)
+            e.accept(v);
+    }
+
 }

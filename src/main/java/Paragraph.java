@@ -26,6 +26,11 @@ public class Paragraph implements Element{
         return null;
     }
 
+    @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
+    }
+
     public String getText() {
         return text;
     }
