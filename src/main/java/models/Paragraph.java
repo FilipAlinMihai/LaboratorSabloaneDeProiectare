@@ -4,7 +4,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import services.AlignStrategy;
 
-public class Paragraph implements Element{
+import java.io.IOException;
+import java.io.Serializable;
+
+public class Paragraph implements Element, Serializable {
 
     private String text;
     public Paragraph(String t)
@@ -31,20 +34,11 @@ public class Paragraph implements Element{
     }
 
     @Override
-    public void accept(Visitor v) throws JSONException {
+    public void accept(Visitor v) throws JSONException, IOException {
         v.visitParagraph(this);
     }
 
-    @Override
-    public JSONObject toJson() throws JSONException {
-        JSONObject img=new JSONObject();
 
-
-        img.put("tip","Pharagraph");
-        img.put("text",text);
-
-        return img;
-    }
 
     public String getText() {
         return text;

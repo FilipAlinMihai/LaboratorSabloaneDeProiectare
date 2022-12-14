@@ -3,6 +3,8 @@ package models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+
 public class TableOfContents implements  Element{
 
 
@@ -23,17 +25,9 @@ public class TableOfContents implements  Element{
     }
 
     @Override
-    public void accept(Visitor v) throws JSONException {
+    public void accept(Visitor v) throws JSONException, IOException {
             v.visitTableOfContents(this);
     }
 
-    @Override
-    public JSONObject toJson() throws JSONException {
-        JSONObject img=new JSONObject();
 
-
-        img.put("tip","TableOfContents");
-
-        return img;
-    }
 }

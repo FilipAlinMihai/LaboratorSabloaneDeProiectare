@@ -3,7 +3,10 @@ package models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Table implements  Element {
+import java.io.IOException;
+import java.io.Serializable;
+
+public class Table implements  Element, Serializable {
 
     private String title;
     public Table(String t)
@@ -28,18 +31,9 @@ public class Table implements  Element {
     }
 
     @Override
-    public void accept(Visitor v) throws JSONException {
+    public void accept(Visitor v) throws JSONException, IOException {
         v.visitTable(this);
     }
 
-    @Override
-    public JSONObject toJson() throws JSONException {
-        JSONObject img=new JSONObject();
 
-
-        img.put("tip","Table");
-        img.put("Titlu",title);
-
-        return img;
-    }
 }

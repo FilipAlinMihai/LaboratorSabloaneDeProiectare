@@ -4,8 +4,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.awt.*;
+import java.io.IOException;
+import java.io.Serializable;
 
-public class ImageProxy implements Picture,Element {
+public class ImageProxy implements Picture,Element, Serializable {
         private String url;
         private Dimension dim;
         private Image realImage= null;
@@ -62,18 +64,9 @@ public class ImageProxy implements Picture,Element {
     }
 
     @Override
-    public void accept(Visitor v) throws JSONException {
+    public void accept(Visitor v) throws JSONException, IOException {
             v.visitImageProxy(this);
     }
 
-    @Override
-    public JSONObject toJson() throws JSONException {
-        JSONObject img=new JSONObject();
 
-
-        img.put("tip","ImageProxy");
-        img.put("url",url);
-
-        return img;
-    }
 }

@@ -3,9 +3,11 @@ import org.json.JSONException;
 import services.BookSaveVisitor;
 import services.BookStatistics;
 
+import java.io.IOException;
+
 public class Principal {
 
-    public static void main(String[] args) throws JSONException {
+    public static void main(String[] args) throws JSONException, IOException {
         Section cap1 = new Section("Capitolul 1");
         Paragraph p1 = new Paragraph("models.Paragraph 1");
         cap1.add(p1);

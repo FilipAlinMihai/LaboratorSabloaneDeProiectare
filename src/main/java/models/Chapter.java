@@ -1,8 +1,9 @@
 package models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Chapter {
+public class Chapter implements Serializable {
     private String name;
     private int index;
     private ArrayList<SubChapter> subChapters;

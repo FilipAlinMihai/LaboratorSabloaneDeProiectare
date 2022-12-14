@@ -4,9 +4,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.awt.*;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element,Picture {
+public class Image implements Element,Picture, Serializable {
 
     private String imageName;
 
@@ -38,21 +40,11 @@ public class Image implements Element,Picture {
     }
 
     @Override
-    public void accept(Visitor v) throws JSONException {
+    public void accept(Visitor v) throws JSONException, IOException {
             v.visitImage(this);
     }
 
-    @Override
-    public JSONObject toJson() throws JSONException {
 
-        JSONObject img=new JSONObject();
-
-
-        img.put("tip","Imagine");
-        img.put("numeImagine",imageName);
-
-        return img;
-    }
 
     @Override
     public String url() {

@@ -3,9 +3,11 @@ package models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Section implements Element{
+public class Section implements Element, Serializable {
 
     protected String name;
     protected int index;
@@ -43,21 +45,12 @@ public class Section implements Element{
     }
 
     @Override
-    public void accept(Visitor v) throws JSONException {
+    public void accept(Visitor v) throws JSONException, IOException {
         v.visitSection(this);
         for(Element e:elements)
             e.accept(v);
     }
 
-    @Override
-    public JSONObject toJson() throws JSONException {
-        JSONObject img=new JSONObject();
 
-
-        img.put("tip","Section");
-        img.put("nume",name);
-
-        return img;
-    }
 
 }

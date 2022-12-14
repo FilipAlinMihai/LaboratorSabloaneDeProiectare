@@ -2,7 +2,9 @@ package services;
 
 import models.Paragraph;
 
-public class AlignLeft implements AlignStrategy {
+import java.io.Serializable;
+
+public class AlignLeft implements AlignStrategy, Serializable {
 
     @Override
     public void render(Paragraph p) {
