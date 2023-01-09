@@ -9,3 +9,6 @@ Nota 10
 https://github.com/FilipAlinMihai/LaboratorSP/tree/a0625c530c37b6970e159fbd1de483fe68e98820
 - all good
 Nota 10
+
+# Nota finala
+10
