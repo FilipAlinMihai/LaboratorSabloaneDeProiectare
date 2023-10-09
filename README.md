@@ -1,3 +1,5 @@
+## Laborator Sabloane de Proiectare
+
 Proiect in care sunt demonstrate sabloane de proiectare precum :
 Composite Pattern, Proxy Pattern, Strategy Pattern, Visitor Pattern 
 
