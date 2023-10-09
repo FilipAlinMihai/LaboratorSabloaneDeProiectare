@@ -1,3 +1,10 @@
+Proiect in care sunt demonstrate sabloane de proiectare precum :
+Composite Pattern, Proxy Pattern, Strategy Pattern, Visitor Pattern 
+
+---------------------------------------------------------------
+A project in which design patterns such as the:
+Composite Pattern, Proxy Pattern, Strategy Pattern, and Visitor Pattern are demonstrated.
+
 # Lab1
 - Constructorul models.Book() nu ar trebui sa fie prezent
 - consistenta in limbaj, preferabil totul in engleza
